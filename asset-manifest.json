@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/react-giphy-challenge/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/react-giphy-challenge/static/js/main.7ca84745.chunk.js",
+    "main.js.map": "/react-giphy-challenge/static/js/main.7ca84745.chunk.js.map",
+    "runtime-main.js": "/react-giphy-challenge/static/js/runtime-main.72bd776b.js",
+    "runtime-main.js.map": "/react-giphy-challenge/static/js/runtime-main.72bd776b.js.map",
+    "static/js/2.e803ed4e.chunk.js": "/react-giphy-challenge/static/js/2.e803ed4e.chunk.js",
+    "static/js/2.e803ed4e.chunk.js.map": "/react-giphy-challenge/static/js/2.e803ed4e.chunk.js.map",
+    "index.html": "/react-giphy-challenge/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/react-giphy-challenge/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.e803ed4e.chunk.js.LICENSE.txt": "/react-giphy-challenge/static/js/2.e803ed4e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.72bd776b.js",
+    "static/js/2.e803ed4e.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.7ca84745.chunk.js"
+  ]
+}
