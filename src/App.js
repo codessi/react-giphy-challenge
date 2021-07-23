@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-const Giphy = () => {
+const App = () => {
   const [search, setSearch] = useState('')
   const [data , setData] = useState([])
 
@@ -58,5 +58,5 @@ const Giphy = () => {
   )
 }
 
-export default Giphy
+export default App
 
