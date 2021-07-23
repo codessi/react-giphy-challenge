@@ -1,43 +1,62 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from 'react'
 import axios from 'axios'
-// import { response } from "express"
+const Giphy = () => {
+  const [search, setSearch] = useState('')
+  const [data , setData] = useState([])
 
-const App = () => {
+ const handleChange = (event) => {
+   setSearch(event.target.value)
+   console.log(search)
+ }
 
-  const [image, setImage] = useState([])
+ const handleSubmit = async(event) => {
+  
+  event.preventDefault()
+   try{
+     const response = await axios('http://api.giphy.com/v1/gifs/search', {
+       params:{
+         api_key:'67MizVVVBOd8kXUjIdUH7I6zz7z2CDB3',
+        //  api_key:'',
+         q: search,
+         limit: 10
+       }
+     })
+     console.log(response)
+     setData(response.data.data)
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const url = `http://api.giphy.com/v1/gifs/trending`
-        const result = await axios( url,{
-          params: {
-            api_key: "67MizVVVBOd8kXUjIdUH7I6zz7z2CDB3",
-            limit: 20,
-          rating:'r'
-          }
-        })
-        // console.log(result)
-        setImage(result.data.data)
-        console.log(image);
-      }
-      catch(err){
-        console.log("error");
-      }
+    } catch{
+      console.log('error')
     }
-   fetchData() 
-  }, [])
+
+  }
+
+  const ShowGiphy = () => {
+    return data.map(el => {
+      return (
+        <div>
+          <p>Name:{el.title}</p>
+          <img alt='' src={el.images.fixed_height.url}/>
+            {/* <p>Description:{el.user.description && (<p>no description available</p>)} </p> */}
+        </div>
+      )
+    })
+  }
+
+
+
+
 
   return (
     <div>
-       <div> Hello Wolrd</div> 
-       {console.log(image)}
-       {/* <img alt='' src={image.data[0].url}/> */}
+      Search Giphy Here
+      <form >
+        <input onChange = {handleChange} />
+        <button onClick={handleSubmit}  >Search</button>
+      </form>
+      <div> <ShowGiphy /></div>
     </div>
-    
-    
   )
-
 }
 
-export default App
+export default Giphy
+
